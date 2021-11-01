@@ -1,67 +1,110 @@
-#include <iostream>
-using namespace std;
-
-
-
-
-int getlength(string array[]){
-	return sizeof(array)/sizeof(array[0]);
-}
-
-void display(int navigator, string array[]){
+	#include <iostream>
+	#include <vector> 
+	using namespace std;
 	
-	if(getlength(array) >= navigator+1){
-		cout<<">" + array[navigator]<<endl;
-		cout<<array[navigator+1]<<endl;
+	int navigator, depth;
+	
+	vector<string> menu_1 = {"Spielstart", "Einstellungen"};					//depth = 0
+	vector<string> menu_2 = {"Schwierigkeit", "Farbe", "Beginner", "zurueck"};	//depth = 1	
+	vector<string> menu_schwierigkeit = {"einfach", "schwer"};					//depth = 2
+	vector<string> menu_farbe = {"Gelb", "Rot"};								//depth = 3
+	vector<string> menu_beginner = {"Spieler", "Roboter"};						//depth = 4
+	vector<string> actual_menu;									//menu to display currently
+	
+	
+	
+	void display(){
+		int size = actual_menu.size();
+		if(navigator < size-1){
+			cout<<">" + actual_menu[navigator]<<endl;
+			cout<<actual_menu[navigator+1]<<endl;
+		}
+		else{
+			cout<<actual_menu[navigator-1]<<endl;
+			cout<<">" + actual_menu[navigator]<<endl;
+		}
 	}
-	else{
-		cout<<array[navigator-1]<<endl;
-		cout<<">" + array[navigator]<<endl;
-	}
 	
-}
-
-int get_action(){
-	int input;
-	cin>>input;
-	return input;
-}
-
-int menu(){
-	
-	string menu_1[2] = {"Spielstart", "Einstellungen"};
-	
-	string menu_2[4] = {"Schwierigkeit", "Farbe", "Beginner", "zurueck"};
-	
-	string menu_schwierigkteit[2] = {"einfach", "schwer"};
-	string menu_farbe[2] = {"Gelb", "Rot"};
-	string menu_beginner[2] = {"Spieler", "Roboter"};
-	
-	int navigator = 0;
-	int depth = 0;
-	// 8 = hoch			789
-	// 6 = enter		456	
-	// 2 = runter		123
-	
-	while(true){
-		switch(depth){
-			case 0:
-				display(navigator, menu_1);
+	void get_action(){
+		
+		// 8 = hoch			789
+		// 6 = enter		456	
+		// 2 = runter		123
+		
+		
+		int input;
+		cin>>input;
+		
+		int menu_size = actual_menu.size();
+		switch (input){
+			case 2:
+				if(navigator < menu_size-1){
+					navigator++;
+				}
+				else{
+					navigator = navigator;
+				}
 				break;
 				
-			
-			case 1:
-				display(navigator, menu_2);
+			case 8:
+				if(navigator > 0){
+					navigator--;
+				}
+				else{
+					navigator = 0;
+				}
 				break;
-						
+				
+			case 6:
+				if(depth == 0 && navigator == 1 ){
+					depth = 1;
+					actual_menu = menu_2;
+				}
+				else if(depth == 1 && navigator == 0){
+					depth = 2;
+					actual_menu = menu_schwierigkeit;
+				}
+				else if(depth == 1 && navigator ==	1){
+					depth = 3;
+					actual_menu = menu_farbe;
+				}
+				else if(depth == 1 && navigator == 2){
+					depth = 4;
+					actual_menu = menu_beginner;
+				}
+				else if(depth == 1 && navigator == 3){
+					depth = 0;
+					actual_menu = menu_1;
+				}
+				else{
+					depth = 0;
+					actual_menu = menu_1;
+				}
+				navigator = 0;
+				break;
+				
+			default:
+				navigator = 0;
+				break;
 		}
-	
-		navigator = get_action();
-	
 	}
 	
+	int menu(){
+		
+		navigator = 0;
+		depth = 0;
+		actual_menu = menu_1;
+		
+		
+		while(true){
+			display();
+			get_action();
+			
+		}
+		
+		
+		
+		
+		return 0;
+	}
 	
-	
-	
-	return 0;
-}
