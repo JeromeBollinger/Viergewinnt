@@ -11,8 +11,7 @@ int main(int argc, char** argv) {
 	
 	//setup():
 	//menu();
-	json_read();
-	cout<<beginner<<endl;
+	//json_write();
 	
 	
 	return 0;
