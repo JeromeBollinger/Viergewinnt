@@ -1,0 +1,3 @@
+/home/pi/Desktop/4connect/Viergewinnt/CMakeFiles/rebuild_cache.dir
+/home/pi/Desktop/4connect/Viergewinnt/CMakeFiles/Viergewinnt.dir
+/home/pi/Desktop/4connect/Viergewinnt/CMakeFiles/edit_cache.dir
