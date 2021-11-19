@@ -39,7 +39,9 @@ void console(string text){
 	cout<<text<<endl;
 }
 
-
+bool read_mux(){
+	return digitalRead(mux_input_signal);
+}
 
 bool set_mux_entrance(int in){
 
@@ -125,9 +127,6 @@ bool set_mux_entrance(int in){
 	
 }
 
-
-
-
 bool setup_motors(){
 	
 	//motor left
@@ -138,8 +137,6 @@ bool setup_motors(){
 	 * 
 	 * implement error when taking too long
 	 */
-
-	
 
 	digitalWrite(motor_direction, LOW);
 	
@@ -199,6 +196,105 @@ bool setup_motors(){
 	return true;
 
 }
+
+
+
+
+void raise_lift(bool left_lift){ //0 or 1 as arguments : 0 = left, 1 = right
+	
+}
+
+void gripper_move(int position){
+	
+}
+
+void gripper_open(){
+	
+}
+
+void gripper_close(){
+	
+}
+
+int get_lift_coin_position(bool lift_left){
+	
+}
+
+bool won_game(string moves){
+	
+}
+
+bool draw_game(string moves){
+	
+}
+
+int get_IR_Position(){
+	while(true){
+		for(int i = 0; i<11; i++){
+			set_mux_entrance(i);
+			delay(5);
+			if(read_mux()) return 1;
+		}
+	}
+}
+
+int play_structure(){
+	
+	bool robot_begins = false; 				//0= Spieler, 1 = Roboter
+	bool robot_lift_is_left = false;						//0 = links, 1 = rechts
+	int robot_color_position = get_lift_coin_position(robot_lift_is_left); 			//depends on robot_lift
+	
+	bool draw_robo = robot_begins;
+	
+	bool nobody_won_yet = true;
+	bool no_draw_yet = true;
+	
+	string played_moves = "";
+	int position_gripper = 0;				//const variable later 
+	int waiting_position = 0;
+	
+	
+	while(nobody_won_yet && no_draw_yet){		//Spiel verlauf
+	
+		if(draw_robo){
+			
+			gripper_open();
+			raise_lift(robot_lift_is_left);		//make the coin accessible
+			gripper_move_to(lift_left_is_robot_color);	
+			gripper_close();							//grabed the coin
+			
+			int next_move = get_next_move(played_moves);
+			gripper_move_to(next_move);
+			gripper_open();								//release the coin
+			gripper_move_to(waiting_position);
+			
+			played_moves = played_moves + parseString(next_move);
+			draw_robo = !draw_robo;
+			
+			
+		} else if(!draw_robo){
+			
+			raise_lift(!robot_lift_is_left);
+			int player_move = get_IR_Position();
+			
+			played_moves = played_moves + parseString(player_move);
+			draw_robo = !draw_robo;
+		}
+		
+		if(won_game(played_moves)){
+			nobody_won_yet = false;
+		} else if(draw_game(played_moves)){
+			no_draw_yet  =false;
+		}
+		
+		
+	}
+	
+	
+	
+	
+}
+
 
 
 int main(int argc, char** argv) {
