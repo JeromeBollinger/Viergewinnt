@@ -4,6 +4,7 @@
 CMakeFiles/Viergewinnt.dir/src/main.cpp.o
  /home/pi/Desktop/4connect/Viergewinnt/WiringPi/devLib/lcd.c
  /home/pi/Desktop/4connect/Viergewinnt/WiringPi/devLib/lcd.h
+ /home/pi/Desktop/4connect/Viergewinnt/WiringPi/wiringPi/softPwm.h
  /home/pi/Desktop/4connect/Viergewinnt/WiringPi/wiringPi/wiringPi.h
  /home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/allocators.h
  /home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/document.h

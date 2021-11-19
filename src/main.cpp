@@ -139,7 +139,7 @@ bool setup_motors(){
 	 * implement error when taking too long
 	 */
 
-	pwm
+	
 
 	digitalWrite(motor_direction, LOW);
 	
@@ -203,7 +203,9 @@ bool setup_motors(){
 
 int main(int argc, char** argv) {
 	wiringPiSetupGpio();
-	int softPwmCreate (servo_gripper, 10, 200);
+	
+	softPwmCreate(servo_gripper, 10, 200);
+	
 	softPwmWrite(servo_gripper, 10);
 
 	pinMode(motor_direction, INPUT);
@@ -217,7 +219,6 @@ int main(int argc, char** argv) {
 	pinMode(mux_S1, OUTPUT);
 	pinMode(mux_S2, OUTPUT);
 	pinMode(mux_S3, OUTPUT);
-	
 	
 	
 	

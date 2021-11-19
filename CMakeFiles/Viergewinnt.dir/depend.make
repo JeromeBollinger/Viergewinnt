@@ -3,6 +3,7 @@
 
 CMakeFiles/Viergewinnt.dir/src/main.cpp.o: WiringPi/devLib/lcd.c
 CMakeFiles/Viergewinnt.dir/src/main.cpp.o: WiringPi/devLib/lcd.h
+CMakeFiles/Viergewinnt.dir/src/main.cpp.o: WiringPi/wiringPi/softPwm.h
 CMakeFiles/Viergewinnt.dir/src/main.cpp.o: WiringPi/wiringPi/wiringPi.h
 CMakeFiles/Viergewinnt.dir/src/main.cpp.o: rapidjson/include/rapidjson/allocators.h
 CMakeFiles/Viergewinnt.dir/src/main.cpp.o: rapidjson/include/rapidjson/document.h
