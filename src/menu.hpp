@@ -4,6 +4,7 @@ extern "C" {
 #include "../WiringPi/wiringPi/wiringPi.h"
 #include "../WiringPi/devLib/lcd.h"
 #include "../WiringPi/devLib/lcd.c"
+#include "../WiringPi/wiringPi/softPwm.h"
 }
 	using namespace std;
 	

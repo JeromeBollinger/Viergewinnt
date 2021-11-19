@@ -17,6 +17,8 @@ const int motor_lift_right = 16;
 const int motor_lift_middle = 20;
 const int motor_gripper = 21;
 
+const int servo_gripper = 18;
+
 const int mux_input_signal = 27;
 const int mux_S0 = 5;
 const int mux_S1 = 6;
@@ -136,8 +138,10 @@ bool setup_motors(){
 	 * 
 	 * implement error when taking too long
 	 */
-	 
-	 digitalWrite(motor_direction, LOW);
+
+	pwm
+
+	digitalWrite(motor_direction, LOW);
 	
 	if(set_mux_entrance(11)){
 		while(!digitalRead(mux_input_signal)){
@@ -199,7 +203,9 @@ bool setup_motors(){
 
 int main(int argc, char** argv) {
 	wiringPiSetupGpio();
-	
+	int softPwmCreate (servo_gripper, 10, 200);
+	softPwmWrite(servo_gripper, 10);
+
 	pinMode(motor_direction, INPUT);
 	pinMode(motor_lift_left, OUTPUT);
 	pinMode(motor_lift_right, OUTPUT);
