@@ -16,8 +16,13 @@ const int motor_lift_left = 15;
 const int motor_lift_right = 16;
 const int motor_lift_middle = 20;
 const int motor_gripper = 21;
-
 const int servo_gripper = 18;
+
+const float step_degree = 1.8;
+const float spindle_pitch = 3;
+const int motor_delay = 5;
+const float pi = 3.1415926;
+const float gear_diameter = 6;
 
 const int mux_input_signal = 27;
 const int mux_S0 = 5;
@@ -25,7 +30,48 @@ const int mux_S1 = 6;
 const int mux_S2 = 26;
 const int mux_S3 = 17;
 
+float gripper_position = 0;
 
+
+
+float get_steps_from_mm(float milimeter){
+	return ((milimeter/spindle_pitch)*360)/step_degree;
+	
+}
+
+void lift_mm(float milimeter, int direction, int motor_lift){
+	float steps = get_steps_from_mm(milimeter);
+	int step = parseInt(steps);
+	digitalWrite(motor_direction, direction);
+	for(int i = 0; i<step; i++){
+		digitalWrite(motor_lift, HIGH);
+		delay(motor_delay);
+		digitalWrite(motor_lift, LOW);
+		delay(motor_delay);
+	}
+}
+
+float get_steps_from_gripper(float milimeter){
+	umriss = pi*gear_diametre;
+	return (360*milimeter)/(step_degree*gear_diameter);
+}
+
+void move_gripper(float milimeter, int direction){
+	float steps = get_steps_from_gripper(milimeter);
+	int step = parseInt(steps);
+	digitalWrite(motor_direction, direction);
+	for(int i = 0; i<step; i++){
+		digitalWrite(motor_gripper, HIGH);
+		delay(motor_delay);
+		digitalWrite(motor_gripper, LOW);
+		delay(motor_delay);
+	}
+	if(direction){
+		gripper_position += milimeter;
+	}else{
+		gripper_position -= milimeter;
+	}
+}
 
 void error_message(string error_m){
 	cout<<error_m<<endl;
@@ -52,7 +98,7 @@ int S3 = 0;
 	ss << output;
 	ss >> str;
 	
-	if(output > 15 || output < 0) return false;
+	if(output > 1motor_delay || output < 0) return false;
 	
 	output++;
 	
@@ -125,9 +171,9 @@ bool setup_motors(){
 		while(!digitalRead(mux_input_signal)){
 			for(int i = 0; i<5; i++){
 				digitalWrite(motor_lift_left, HIGH);
-				delay(5);
+				delay(motor_delay);
 				digitalWrite(motor_lift_left, LOW);
-				delay(5);
+				delay(motor_delay);
 			}
 		}
 	}else{
@@ -138,9 +184,9 @@ bool setup_motors(){
 		while(!digitalRead(mux_input_signal)){
 			for(int i = 0; i<5; i++){
 				digitalWrite(motor_lift_right, HIGH);
-				delay(5);
+				delay(motor_delay);
 				digitalWrite(motor_lift_right, LOW);
-				delay(5);
+				delay(motor_delay);
 			}
 		}
 	}else{
@@ -151,9 +197,9 @@ bool setup_motors(){
 		while(!digitalRead(mux_input_signal)){
 			for(int i = 0; i<5; i++){
 				digitalWrite(motor_lift_middle, HIGH);
-				delay(5);
+				delay(motor_delay);
 				digitalWrite(motor_lift_middle, LOW);
-				delay(5);
+				delay(motor_delay);
 			}
 		}
 	}else{
@@ -164,16 +210,16 @@ bool setup_motors(){
 		while(!digitalRead(mux_input_signal)){
 			for(int i = 0; i<5; i++){
 				digitalWrite(motor_gripper, HIGH);
-				delay(5);
+				delay(motor_delay);
 				digitalWrite(motor_gripper, LOW);
-				delay(5);
+				delay(motor_delay);
 			}
 		}
 	}else{
 		error_message("could not set_mux_entrance");
 		return false;
 	}
-	
+	gripper_position = 0;
 	return true;
 
 }
@@ -213,8 +259,8 @@ int get_IR_Position(){
 	while(true){
 		for(int i = 0; i<11; i++){
 			set_mux_entrance(i);
-			delay(5);
-			if(read_mux()) return 1;
+			delay(motor_delay);
+			if(read_mux()) return i;
 		}
 	}
 }
