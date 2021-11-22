@@ -238,7 +238,7 @@ int get_IR_Position(){
 	}
 }
 
-int play_structure(){
+/*int play_structure(){
 	
 	bool robot_begins = false; 				//0= Spieler, 1 = Roboter
 	bool robot_lift_is_left = false;						//0 = links, 1 = rechts
@@ -268,7 +268,7 @@ int play_structure(){
 			gripper_open();								//release the coin
 			gripper_move_to(waiting_position);
 			
-			played_moves = played_moves + parseString(next_move);
+			played_moves = played_moves + next_move;
 			draw_robo = !draw_robo;
 			
 			
@@ -277,7 +277,7 @@ int play_structure(){
 			raise_lift(!robot_lift_is_left);
 			int player_move = get_IR_Position();
 			
-			played_moves = played_moves + parseString(player_move);
+			played_moves = played_moves + player_move;
 			draw_robo = !draw_robo;
 		}
 		
@@ -293,7 +293,7 @@ int play_structure(){
 	
 	
 	
-}
+}*/
 
 
 
@@ -316,7 +316,17 @@ int main(int argc, char** argv) {
 	pinMode(mux_S2, OUTPUT);
 	pinMode(mux_S3, OUTPUT);
 	
+	digitalWrite(motor_direction, 1);
+	digitalWrite(motor_lift_left, 0);
 	
+	
+	for(int i = 0; i<40; i++){
+		cout<<"hello"<<endl;
+		digitalWrite(motor_lift_left, HIGH);
+		delay(10);
+		digitalWrite(motor_lift_left, LOW);
+		delay(10);
+	}
 	
 	//setup_lcd();
 	//setup():
