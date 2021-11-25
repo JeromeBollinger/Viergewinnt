@@ -19,7 +19,6 @@ const int motor_gripper = 21;
 const int servo_gripper = 18;
 
 const float step_degree = 1.8;
-const float spindle_pitch = 3;
 const int motor_delay = 5;
 const float pi = 3.1415926;
 const float gear_diameter = 6;
@@ -37,7 +36,7 @@ const float steps_per_rotation = 200;
 const float spindle_pitch = 1.25;
 const float coin_height = 35;
 
-
+/*
 float get_steps_from_mm(float milimeter){
 	return ((milimeter/spindle_pitch)*360)/step_degree;
 	
@@ -80,7 +79,7 @@ void move_gripper(float milimeter, int direction){
 void error_message(string error_m){
 	cout<<error_m<<endl;
 }
-
+*/
 void console(string text){
 	cout<<text<<endl;
 }
@@ -174,6 +173,7 @@ bool set_mux_entrance(int in){
 	
 }
 
+/*
 bool setup_motors(){
 	
 	//motor left
@@ -183,7 +183,7 @@ bool setup_motors(){
 	 * mux entrance 14 = endschalter gripper
 	 * 
 	 * implement error when taking too long
-	 */
+	 
 
 	digitalWrite(motor_direction, LOW);
 	
@@ -285,7 +285,7 @@ int get_IR_Position(){
 	}
 }
 
-/*int play_structure(){
+int play_structure(){
 	
 	bool robot_begins = false; 				//0= Spieler, 1 = Roboter
 	bool robot_lift_is_left = false;						//0 = links, 1 = rechts
@@ -351,7 +351,7 @@ int main(int argc, char** argv) {
 	
 	softPwmWrite(servo_gripper, 10);
 
-	pinMode(motor_direction, INPUT);
+	pinMode(motor_direction, OUTPUT);
 	pinMode(motor_lift_left, OUTPUT);
 	pinMode(motor_lift_right, OUTPUT);
 	pinMode(motor_lift_middle, OUTPUT);
@@ -363,16 +363,23 @@ int main(int argc, char** argv) {
 	pinMode(mux_S2, OUTPUT);
 	pinMode(mux_S3, OUTPUT);
 	
-	digitalWrite(motor_direction, 1);
-	digitalWrite(motor_lift_left, 0);
+	digitalWrite(motor_direction, HIGH);
+	digitalWrite(motor_lift_left, LOW);
 	
 	
-	for(int i = 0; i<40; i++){
+
+		
+	
+	
+	for(int i = 0; i<200; i++){
+		if(i==100){
+			digitalWrite(motor_direction, LOW);
+		}
 		cout<<"hello"<<endl;
 		digitalWrite(motor_lift_left, HIGH);
-		delay(10);
+		delay(7);
 		digitalWrite(motor_lift_left, LOW);
-		delay(10);
+		delay(7);
 	}
 	
 	//setup_lcd();
