@@ -6,5 +6,5 @@ CXX_FLAGS =  -pthread   -std=c++0x -L/usr/include -lwiringPi
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/pi/Desktop/4connect/Viergewinnt/include 
+CXX_INCLUDES = -I/home/pi/Desktop/Viergewinnt/include 
 

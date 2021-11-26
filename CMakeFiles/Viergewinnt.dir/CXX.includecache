@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/pi/Desktop/4connect/Viergewinnt/WiringPi/devLib/lcd.c
+/home/pi/Desktop/Viergewinnt/WiringPi/devLib/lcd.c
 stdio.h
 -
 stdlib.h
@@ -16,35 +16,35 @@ stdarg.h
 wiringPi.h
 -
 lcd.h
-/home/pi/Desktop/4connect/Viergewinnt/WiringPi/devLib/lcd.h
+/home/pi/Desktop/Viergewinnt/WiringPi/devLib/lcd.h
 
-/home/pi/Desktop/4connect/Viergewinnt/WiringPi/devLib/lcd.h
+/home/pi/Desktop/Viergewinnt/WiringPi/devLib/lcd.h
 
-/home/pi/Desktop/4connect/Viergewinnt/WiringPi/wiringPi/softPwm.h
+/home/pi/Desktop/Viergewinnt/WiringPi/wiringPi/softPwm.h
 
-/home/pi/Desktop/4connect/Viergewinnt/WiringPi/wiringPi/wiringPi.h
+/home/pi/Desktop/Viergewinnt/WiringPi/wiringPi/wiringPi.h
 
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/allocators.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/allocators.h
 rapidjson.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/rapidjson.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/rapidjson.h
 internal/meta.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/internal/meta.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/internal/meta.h
 memory
 -
 type_traits
 -
 
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/document.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/document.h
 reader.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/reader.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/reader.h
 internal/meta.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/internal/meta.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/internal/meta.h
 internal/strfunc.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/internal/strfunc.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/internal/strfunc.h
 memorystream.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/memorystream.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/memorystream.h
 encodedstream.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/encodedstream.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/encodedstream.h
 new
 -
 limits
@@ -56,123 +56,123 @@ iterator
 map
 -
 
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/encodedstream.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/encodedstream.h
 stream.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/stream.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/stream.h
 memorystream.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/memorystream.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/memorystream.h
 
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/encodings.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/encodings.h
 rapidjson.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/rapidjson.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/rapidjson.h
 
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/error/error.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/error/error.h
 ../rapidjson.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/rapidjson.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/rapidjson.h
 
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/filereadstream.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/filereadstream.h
 stream.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/stream.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/stream.h
 cstdio
 -
 
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/filewritestream.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/filewritestream.h
 stream.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/stream.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/stream.h
 cstdio
 -
 
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/internal/biginteger.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/internal/biginteger.h
 ../rapidjson.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/rapidjson.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/rapidjson.h
 intrin.h
 -
 
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/internal/clzll.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/internal/clzll.h
 ../rapidjson.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/rapidjson.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/rapidjson.h
 intrin.h
 -
 
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/internal/diyfp.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/internal/diyfp.h
 ../rapidjson.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/rapidjson.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/rapidjson.h
 clzll.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/internal/clzll.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/internal/clzll.h
 limits
 -
 intrin.h
 -
 
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/internal/dtoa.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/internal/dtoa.h
 itoa.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/internal/itoa.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/internal/itoa.h
 diyfp.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/internal/diyfp.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/internal/diyfp.h
 ieee754.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/internal/ieee754.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/internal/ieee754.h
 
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/internal/ieee754.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/internal/ieee754.h
 ../rapidjson.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/rapidjson.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/rapidjson.h
 
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/internal/itoa.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/internal/itoa.h
 ../rapidjson.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/rapidjson.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/rapidjson.h
 
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/internal/meta.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/internal/meta.h
 ../rapidjson.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/rapidjson.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/rapidjson.h
 type_traits
 -
 
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/internal/pow10.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/internal/pow10.h
 ../rapidjson.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/rapidjson.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/rapidjson.h
 
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/internal/stack.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/internal/stack.h
 ../allocators.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/allocators.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/allocators.h
 swap.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/internal/swap.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/internal/swap.h
 cstddef
 -
 
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/internal/strfunc.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/internal/strfunc.h
 ../stream.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/stream.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/stream.h
 cwchar
 -
 
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/internal/strtod.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/internal/strtod.h
 ieee754.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/internal/ieee754.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/internal/ieee754.h
 biginteger.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/internal/biginteger.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/internal/biginteger.h
 diyfp.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/internal/diyfp.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/internal/diyfp.h
 pow10.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/internal/pow10.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/internal/pow10.h
 climits
 -
 limits
 -
 
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/internal/swap.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/internal/swap.h
 ../rapidjson.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/rapidjson.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/rapidjson.h
 
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/memorystream.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/memorystream.h
 stream.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/stream.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/stream.h
 
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/msinttypes/inttypes.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/msinttypes/inttypes.h
 stdint.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/msinttypes/stdint.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/msinttypes/stdint.h
 inttypes.h
 -
 
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/msinttypes/stdint.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/msinttypes/stdint.h
 stdint.h
 -
 limits.h
@@ -180,19 +180,19 @@ limits.h
 wchar.h
 -
 
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/rapidjson.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/rapidjson.h
 cstdlib
 -
 cstring
 -
 rapidjson/...
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/rapidjson/...
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/rapidjson/...
 string
 -
 msinttypes/stdint.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/msinttypes/stdint.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/msinttypes/stdint.h
 msinttypes/inttypes.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/msinttypes/inttypes.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/msinttypes/inttypes.h
 stdint.h
 -
 inttypes.h
@@ -200,7 +200,7 @@ inttypes.h
 endian.h
 -
 rapidjson/...
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/rapidjson/...
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/rapidjson/...
 cassert
 -
 utility
@@ -208,21 +208,21 @@ utility
 cassert
 -
 
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/reader.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/reader.h
 allocators.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/allocators.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/allocators.h
 stream.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/stream.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/stream.h
 encodedstream.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/encodedstream.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/encodedstream.h
 internal/clzll.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/internal/clzll.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/internal/clzll.h
 internal/meta.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/internal/meta.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/internal/meta.h
 internal/stack.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/internal/stack.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/internal/stack.h
 internal/strtod.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/internal/strtod.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/internal/strtod.h
 limits
 -
 intrin.h
@@ -236,45 +236,45 @@ arm_neon.h
 stdexcept
 -
 rapidjson/error/error.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/rapidjson/error/error.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/rapidjson/error/error.h
 rapidjson/reader.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/rapidjson/reader.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/rapidjson/reader.h
 error/error.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/error/error.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/error/error.h
 
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/stream.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/stream.h
 rapidjson.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/rapidjson.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/rapidjson.h
 encodings.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/encodings.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/encodings.h
 
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/stringbuffer.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/stringbuffer.h
 stream.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/stream.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/stream.h
 internal/stack.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/internal/stack.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/internal/stack.h
 utility
 -
 internal/stack.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/internal/stack.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/internal/stack.h
 
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/writer.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/writer.h
 stream.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/stream.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/stream.h
 internal/clzll.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/internal/clzll.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/internal/clzll.h
 internal/meta.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/internal/meta.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/internal/meta.h
 internal/stack.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/internal/stack.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/internal/stack.h
 internal/strfunc.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/internal/strfunc.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/internal/strfunc.h
 internal/dtoa.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/internal/dtoa.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/internal/dtoa.h
 internal/itoa.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/internal/itoa.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/internal/itoa.h
 stringbuffer.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/stringbuffer.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/stringbuffer.h
 new
 -
 intrin.h
@@ -286,23 +286,23 @@ emmintrin.h
 arm_neon.h
 -
 
-/home/pi/Desktop/4connect/Viergewinnt/src/json_reader_writer.hpp
+/home/pi/Desktop/Viergewinnt/src/json_reader_writer.hpp
 iostream
 -
 vector
 -
 ../rapidjson/include/rapidjson/document.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/document.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/document.h
 ../rapidjson/include/rapidjson/reader.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/reader.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/reader.h
 ../rapidjson/include/rapidjson/writer.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/writer.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/writer.h
 ../rapidjson/include/rapidjson/stringbuffer.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/stringbuffer.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/stringbuffer.h
 ../rapidjson/include/rapidjson/filereadstream.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/filereadstream.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/filereadstream.h
 ../rapidjson/include/rapidjson/filewritestream.h
-/home/pi/Desktop/4connect/Viergewinnt/rapidjson/include/rapidjson/filewritestream.h
+/home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/filewritestream.h
 cstdio
 -
 sstream
@@ -310,35 +310,41 @@ sstream
 fstream
 -
 
-/home/pi/Desktop/4connect/Viergewinnt/src/main.cpp
+/home/pi/Desktop/Viergewinnt/src/main.cpp
 iostream
 -
 vector
 -
 setup.hpp
-/home/pi/Desktop/4connect/Viergewinnt/src/setup.hpp
+/home/pi/Desktop/Viergewinnt/src/setup.hpp
 menu.hpp
-/home/pi/Desktop/4connect/Viergewinnt/src/menu.hpp
+/home/pi/Desktop/Viergewinnt/src/menu.hpp
 json_reader_writer.hpp
-/home/pi/Desktop/4connect/Viergewinnt/src/json_reader_writer.hpp
+/home/pi/Desktop/Viergewinnt/src/json_reader_writer.hpp
 sstream
 -
 
-/home/pi/Desktop/4connect/Viergewinnt/src/menu.hpp
+/home/pi/Desktop/Viergewinnt/src/menu.hpp
 iostream
 -
 vector
 -
+stdio.h
+-
+stdlib.h
+-
+sstream
+-
 ../WiringPi/wiringPi/wiringPi.h
-/home/pi/Desktop/4connect/Viergewinnt/WiringPi/wiringPi/wiringPi.h
+/home/pi/Desktop/Viergewinnt/WiringPi/wiringPi/wiringPi.h
 ../WiringPi/devLib/lcd.h
-/home/pi/Desktop/4connect/Viergewinnt/WiringPi/devLib/lcd.h
+/home/pi/Desktop/Viergewinnt/WiringPi/devLib/lcd.h
 ../WiringPi/devLib/lcd.c
-/home/pi/Desktop/4connect/Viergewinnt/WiringPi/devLib/lcd.c
+/home/pi/Desktop/Viergewinnt/WiringPi/devLib/lcd.c
 ../WiringPi/wiringPi/softPwm.h
-/home/pi/Desktop/4connect/Viergewinnt/WiringPi/wiringPi/softPwm.h
+/home/pi/Desktop/Viergewinnt/WiringPi/wiringPi/softPwm.h
 
-/home/pi/Desktop/4connect/Viergewinnt/src/setup.hpp
+/home/pi/Desktop/Viergewinnt/src/setup.hpp
 iostream
 -
 

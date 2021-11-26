@@ -1,5 +1,8 @@
 #include <iostream>
 #include <vector> 
+#include <stdio.h>
+#include <stdlib.h>
+#include <sstream>
 extern "C" {
 #include "../WiringPi/wiringPi/wiringPi.h"
 #include "../WiringPi/devLib/lcd.h"
@@ -20,27 +23,49 @@ extern "C" {
 	
 	int rs = 7;
 	int strb = 8;
-	int pin1 = 18;
-	int pin2 = 25;
-	int pin3 = 24;
-	int pin4 = 23;
+	int pin1 = 25;
+	int pin2 = 24;
+	int pin3 = 23;
+	int pin4 = 18;
 	
+	int lcd;
 	
 	void setup_lcd(){
 		wiringPiSetupGpio();
-		int lcd = lcdInit(2, 16, 4, rs, strb, pin1, pin2, pin3, pin4, 0, 0, 0, 0);
-		lcdPuts(lcd, "A");
+		lcd = lcdInit(2, 16, 4, rs, strb, pin1, pin2, pin3, pin4, 0, 0, 0, 0);
+		delay(500);
+		lcdPuts(lcd, "ABCDE");
+		delay(500);
 	}
 	
 	void display(){
 		int size = actual_menu.size();
+		lcdClear(lcd);
 		if(navigator < size-1){
-			cout<<">" + actual_menu[navigator]<<endl;
-			cout<<actual_menu[navigator+1]<<endl;
+			stringstream ss;
+			string str;			
+			stringstream ss2;
+			string str2;
+			ss << actual_menu[navigator];
+			ss >> str;
+			ss2 << actual_menu[navigator+1];
+			ss2 >> str2;
+			lcdPuts(lcd,(">"+str).c_str());
+			lcdPosition(lcd, 0, 1);
+			lcdPuts(lcd, str2.c_str());
 		}
 		else{
-			cout<<actual_menu[navigator-1]<<endl;
-			cout<<">" + actual_menu[navigator]<<endl;
+			stringstream ss;			
+			stringstream ss2;
+			string str;
+			string str2;
+			ss << actual_menu[navigator-1];
+			ss >> str;
+			ss2 << actual_menu[navigator];
+			ss2 >> str2;
+			lcdPuts(lcd, str.c_str());
+			lcdPosition(lcd, 0, 1);
+			lcdPuts(lcd,(">" + str2).c_str());
 		}
 	}
 	

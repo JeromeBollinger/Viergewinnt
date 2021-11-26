@@ -9,7 +9,6 @@
 
 using namespace std;
 
-
 //Gpio numbers!
 const int motor_direction = 10;
 const int motor_lift_left = 15;
@@ -197,9 +196,6 @@ bool setup_motors(){
 
 }
 
-
-
-
 void raise_lift(bool left_lift){ //0 or 1 as arguments : 0 = left, 1 = right
 	
 }
@@ -216,16 +212,14 @@ void gripper_close(){
 	
 }
 
-int get_lift_coin_position(bool lift_left){
-	
-}
 
 bool won_game(string moves){
 	
+	return false;
 }
 
 bool draw_game(string moves){
-	
+	return false;
 }
 
 int get_IR_Position(){
@@ -238,6 +232,7 @@ int get_IR_Position(){
 	}
 }
 
+/*
 int play_structure(){
 	
 	bool robot_begins = false; 				//0= Spieler, 1 = Roboter
@@ -294,7 +289,7 @@ int play_structure(){
 	
 	
 }
-
+*/
 
 
 int main(int argc, char** argv) {
@@ -304,7 +299,7 @@ int main(int argc, char** argv) {
 	
 	softPwmWrite(servo_gripper, 10);
 
-	pinMode(motor_direction, INPUT);
+	pinMode(motor_direction, OUTPUT);
 	pinMode(motor_lift_left, OUTPUT);
 	pinMode(motor_lift_right, OUTPUT);
 	pinMode(motor_lift_middle, OUTPUT);
@@ -316,9 +311,8 @@ int main(int argc, char** argv) {
 	pinMode(mux_S2, OUTPUT);
 	pinMode(mux_S3, OUTPUT);
 	
+	menu();
 	
-	
-	//setup_lcd();
 	//setup():
 	//menu();
 	//json_write();
