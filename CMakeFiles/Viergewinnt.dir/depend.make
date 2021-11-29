@@ -32,6 +32,7 @@ CMakeFiles/Viergewinnt.dir/src/main.cpp.o: rapidjson/include/rapidjson/reader.h
 CMakeFiles/Viergewinnt.dir/src/main.cpp.o: rapidjson/include/rapidjson/stream.h
 CMakeFiles/Viergewinnt.dir/src/main.cpp.o: rapidjson/include/rapidjson/stringbuffer.h
 CMakeFiles/Viergewinnt.dir/src/main.cpp.o: rapidjson/include/rapidjson/writer.h
+CMakeFiles/Viergewinnt.dir/src/main.cpp.o: src/connect-four_solver.hpp
 CMakeFiles/Viergewinnt.dir/src/main.cpp.o: src/json_reader_writer.hpp
 CMakeFiles/Viergewinnt.dir/src/main.cpp.o: src/main.cpp
 CMakeFiles/Viergewinnt.dir/src/main.cpp.o: src/menu.hpp

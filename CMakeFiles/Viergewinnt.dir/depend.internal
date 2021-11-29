@@ -33,6 +33,7 @@ CMakeFiles/Viergewinnt.dir/src/main.cpp.o
  /home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/stream.h
  /home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/stringbuffer.h
  /home/pi/Desktop/Viergewinnt/rapidjson/include/rapidjson/writer.h
+ /home/pi/Desktop/Viergewinnt/src/connect-four_solver.hpp
  /home/pi/Desktop/Viergewinnt/src/json_reader_writer.hpp
  /home/pi/Desktop/Viergewinnt/src/main.cpp
  /home/pi/Desktop/Viergewinnt/src/menu.hpp

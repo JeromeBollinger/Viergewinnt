@@ -20,6 +20,9 @@ extern "C" {
 	vector<string> menu_beginner = {"Spieler", "Roboter"};						//depth = 4
 	vector<string> actual_menu;									//menu to display currently
 	
+	bool red = false;
+	bool robot_begins = false;
+	bool hard = false;
 	
 	int rs = 7;
 	int strb = 8;
@@ -33,9 +36,15 @@ extern "C" {
 	void setup_lcd(){
 		wiringPiSetupGpio();
 		lcd = lcdInit(2, 16, 4, rs, strb, pin1, pin2, pin3, pin4, 0, 0, 0, 0);
-		delay(500);
-		lcdPuts(lcd, "ABCDE");
-		delay(500);
+		lcdPuts(lcd, "Starting");
+	}
+	
+	void lcd_write(string line1, string line2){
+		lcdClear(lcd);
+		lcdPosition(lcd, 0, 0);
+		lcdPuts(lcd, line1.c_str());
+		lcdPosition(lcd, 0, 1);
+		lcdPuts(lcd, line2.c_str());
 	}
 	
 	void display(){
@@ -69,7 +78,7 @@ extern "C" {
 		}
 	}
 	
-	void get_action(){
+	bool get_action(){
 		
 		// 8 = hoch			789
 		// 6 = enter		456	
@@ -108,17 +117,40 @@ extern "C" {
 					depth = 2;
 					actual_menu = menu_schwierigkeit;
 				}
+				else if(depth == 2){	//difficulty
+					if(navigator == 0) hard = false;
+					else hard = true;
+					depth = 0;
+					actual_menu = menu_1;	
+				}
 				else if(depth == 1 && navigator ==	1){
 					depth = 3;
 					actual_menu = menu_farbe;
+				}
+				else if(depth == 3){	//color
+					if(navigator == 0) red = false;
+					else red = true;
+					depth = 0;
+					actual_menu = menu_1;	
 				}
 				else if(depth == 1 && navigator == 2){
 					depth = 4;
 					actual_menu = menu_beginner;
 				}
+				else if(depth == 4){	//beginner
+					if(navigator == 0) robot_begins = false;
+					else robot_begins = true;
+					depth = 0;
+					actual_menu = menu_1;	
+				}
 				else if(depth == 1 && navigator == 3){
 					depth = 0;
 					actual_menu = menu_1;
+				}
+				else if(depth == 0 && navigator == 0){	//start game
+					depth = 0;
+					actual_menu = menu_1;
+					return false;
 				}
 				else{
 					depth = 0;
@@ -131,6 +163,7 @@ extern "C" {
 				navigator = 0;
 				break;
 		}
+		return true;
 	}
 	
 	int menu(){
@@ -139,11 +172,9 @@ extern "C" {
 		depth = 0;
 		actual_menu = menu_1;
 		
-		
-		while(true){
+		display();
+		while(get_action()){
 			display();
-			get_action();
-			
 		}
 		
 		

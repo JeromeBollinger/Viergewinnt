@@ -286,6 +286,20 @@ emmintrin.h
 arm_neon.h
 -
 
+/home/pi/Desktop/Viergewinnt/src/connect-four_solver.hpp
+stdio.h
+-
+iostream
+-
+vector
+-
+limits.h
+-
+array
+-
+sstream
+-
+
 /home/pi/Desktop/Viergewinnt/src/json_reader_writer.hpp
 iostream
 -
@@ -323,6 +337,8 @@ json_reader_writer.hpp
 /home/pi/Desktop/Viergewinnt/src/json_reader_writer.hpp
 sstream
 -
+connect-four_solver.hpp
+/home/pi/Desktop/Viergewinnt/src/connect-four_solver.hpp
 
 /home/pi/Desktop/Viergewinnt/src/menu.hpp
 iostream
