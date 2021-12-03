@@ -78,6 +78,8 @@ void playGame() {
 			delay(6000);
 		}
 	}
+	gameOver = false;
+	turns = 0;
 }
 
 void error_message(string error_m){
@@ -140,40 +142,8 @@ bool set_mux_entrance(int in){
 	}
 	else{
 		digitalWrite(mux_S0, LOW);
-	}
-
-	
-	console("set mux" + str);
-	
-	
-	stringstream ss3;
-	string str3;
-	ss3 << S3;
-	ss3 >> str3;
-	console("S3: "+str3);
-	
-	stringstream ss2;
-	string str2;
-	ss2 << S2;
-	ss2 >> str2;
-	console("S2: "+str2);
-	
-	stringstream ss1;
-	string str1;
-	ss1 << S1;
-	ss1 >> str1;
-	console("S1: " + str1);
-	
-	stringstream ss0;
-	string str0;
-	ss0 << S0;
-	ss0 >> str0;
-	console("S0: " + str0);
-	
-	
-	
+	}	
 	return true;
-	
 }
 
 void set_motor_direction(bool dir){
@@ -188,9 +158,9 @@ void move_motor(int motor_pin, int steps, bool direction){
 	set_motor_direction(direction);
 	for(int i = 0; i< steps; i++){
 		digitalWrite(motor_pin, HIGH);
-		delay(5);
+		delay(2);
 		digitalWrite(motor_pin, LOW);
-		delay(5);
+		delay(2);
 	}
 }
 
@@ -309,18 +279,22 @@ int main(int argc, char** argv) {
 	pinMode(mux_S2, OUTPUT);
 	pinMode(mux_S3, OUTPUT);
 	
-	
+	move_motor(motor_lift_left, 400, 1);
+	move_motor(motor_lift_right, 400, 0);
+	move_motor(motor_lift_middle, 400, 1);
+	move_motor(motor_gripper, 400, 0);
 	//setup():
-	menu();
-	//json_write();
-	lcd_write("Game starts!", "");
-	
-	if(hard) MAX_DEPTH = 5;
-	else MAX_DEPTH = 2;
-	
-	initBoard(); // initial setup
-	playGame(); // begin the game
-	
+	/*while(true){
+		menu();
+		//json_write();
+		lcd_write("Game starts!", "");
+		
+		if(hard) MAX_DEPTH = 5;
+		else MAX_DEPTH = 2;
+		
+		initBoard(); // initial setup
+		playGame(); // begin the game
+	}*/
 	
 	return 0;
 }

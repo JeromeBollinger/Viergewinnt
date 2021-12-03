@@ -24,19 +24,26 @@ extern "C" {
 	bool robot_begins = false;
 	bool hard = false;
 	
-	int rs = 7;
-	int strb = 8;
-	int pin1 = 25;
-	int pin2 = 24;
-	int pin3 = 23;
-	int pin4 = 18;
+	const int rs = 7;
+	const int strb = 8;
+	const int pin1 = 25;
+	const int pin2 = 24;
+	const int pin3 = 23;
+	const int pin4 = 18;
 	
+	const int button_up = 22; //white cabel
+	const int button_down = 3;
+	const int button_enter = 2;
+		
 	int lcd;
 	
 	void setup_lcd(){
 		wiringPiSetupGpio();
 		lcd = lcdInit(2, 16, 4, rs, strb, pin1, pin2, pin3, pin4, 0, 0, 0, 0);
 		lcdPuts(lcd, "Starting");
+		pinMode(button_down, INPUT);
+		pinMode(button_up, INPUT);
+		pinMode(button_enter, INPUT);
 	}
 	
 	void lcd_write(string line1, string line2){
@@ -78,6 +85,19 @@ extern "C" {
 		}
 	}
 	
+	
+	int get_button(){
+		while(true){
+			cout<<"up"<<(digitalRead(button_up))<<endl;
+			cout<<"down"<<(digitalRead(button_down))<<endl;
+			cout<<"enter"<<(digitalRead(button_enter))<<endl;
+			if(digitalRead(button_down)) return 2;
+			if(digitalRead(button_up)) return 8;
+			if(digitalRead(button_enter)) return 6;
+			delay(5);
+		}
+	}
+	
 	bool get_action(){
 		
 		// 8 = hoch			789
@@ -85,8 +105,7 @@ extern "C" {
 		// 2 = runter		123
 		
 		
-		int input;
-		cin >> input;
+		int input = get_button();
 		
 		int menu_size = actual_menu.size();
 		switch (input){
@@ -173,8 +192,10 @@ extern "C" {
 		actual_menu = menu_1;
 		
 		display();
+		delay(1000);
 		while(get_action()){
 			display();
+			delay(1000);
 		}
 		
 		

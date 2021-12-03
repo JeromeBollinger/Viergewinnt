@@ -1,0 +1,28 @@
+
+	console("set mux" + str);
+	
+	
+	stringstream ss3;
+	string str3;
+	ss3 << S3;
+	ss3 >> str3;
+	console("S3: "+str3);
+	
+	stringstream ss2;
+	string str2;
+	ss2 << S2;
+	ss2 >> str2;
+	console("S2: "+str2);
+	
+	stringstream ss1;
+	string str1;
+	ss1 << S1;
+	ss1 >> str1;
+	console("S1: " + str1);
+	
+	stringstream ss0;
+	string str0;
+	ss0 << S0;
+	ss0 >> str0;
+	console("S0: " + str0);
+	
