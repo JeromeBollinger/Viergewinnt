@@ -20,7 +20,7 @@ extern "C" {
 	vector<string> menu_beginner = {"Spieler", "Roboter"};						//depth = 4
 	vector<string> actual_menu;									//menu to display currently
 	
-	bool red = false;
+	bool red = true;
 	bool robot_begins = false;
 	bool hard = false;
 	
@@ -29,11 +29,11 @@ extern "C" {
 	const int pin1 = 25;
 	const int pin2 = 24;
 	const int pin3 = 23;
-	const int pin4 = 18;
+	const int pin4 = 14;
 	
 	const int button_up = 22; //white cabel
-	const int button_down = 3;
-	const int button_enter = 2;
+	const int button_down = 19;
+	const int button_enter = 13;
 		
 	int lcd;
 	
@@ -44,6 +44,9 @@ extern "C" {
 		pinMode(button_down, INPUT);
 		pinMode(button_up, INPUT);
 		pinMode(button_enter, INPUT);
+		pullUpDnControl(button_down, PUD_DOWN);
+		pullUpDnControl(button_up, PUD_DOWN);
+		pullUpDnControl(button_enter, PUD_DOWN);
 	}
 	
 	void lcd_write(string line1, string line2){
@@ -87,11 +90,17 @@ extern "C" {
 	
 	
 	int get_button(){
+		while(digitalRead(button_down)){} //Programmer not know interrupt :D
+		while(digitalRead(button_enter)){}
+		while(digitalRead(button_up)){}
+		
 		while(true){
 			cout<<"up"<<(digitalRead(button_up))<<endl;
 			cout<<"down"<<(digitalRead(button_down))<<endl;
 			cout<<"enter"<<(digitalRead(button_enter))<<endl;
 			if(digitalRead(button_down)) return 2;
+			
+			
 			if(digitalRead(button_up)) return 8;
 			if(digitalRead(button_enter)) return 6;
 			delay(5);
@@ -186,16 +195,15 @@ extern "C" {
 	}
 	
 	int menu(){
-		setup_lcd();
 		navigator = 0;
 		depth = 0;
 		actual_menu = menu_1;
 		
 		display();
-		delay(1000);
+		delay(100);
 		while(get_action()){
 			display();
-			delay(1000);
+			delay(100);
 		}
 		
 		

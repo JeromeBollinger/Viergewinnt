@@ -32,26 +32,125 @@ const float coin_height = 35;
 const float gear_diameter = 10;
 const float pi = 3.1415926;
 
+const float magazin_left_1 = 68;
+const float magazin_left_2 = 68*2;
+const float board_0 = 68*3;
+const float board_1 = 68*4;
+const float board_2 = 68*5;
+const float board_3 = 68*6;
+const float board_4 = 68*7;
+const float board_5 = 68*8;
+const float board_6 = 68*9;
+const float magazin_right_1 = 68*10;
+const float magazin_right_2 = 68*11;
+
+const float board_position_array[7] = {board_0, board_1, board_2, board_3, board_4, board_5, board_6};
+
 float gripper_position;
+float magazin_left_position;
+float magazin_right_position;
+float board_lift_position;
 
 int current_robo_move;
 
-/**
- * game playing function
- * loops between players while they take turns
- */
+//function declarations
+void robo_goes_brr(int robo_move);
+void playGame();
+void move_motor(int motor_pin, int steps, bool direction);
+void gripper_move(float to_position);
+void magazin_left_move(float to_position);
+bool get_mux_signal(int mux_signal);
+void gripper_close();
+void gripper_open();
+void magazin_left_move(float to_position);
+void magazin_right_move(float to_position);
+
+//red left, default robo
+
+
+ void robo_goes_brr(int robo_move){
+	 
+	 //gripper gets coin
+	 gripper_open();
+	 if(red){
+		 magazin_left_move(magazin_left_position + 18);
+		 if(turns%4 > 1) gripper_move(magazin_left_1);
+		 else gripper_move(magazin_left_2);
+		gripper_close();
+		magazin_left_move(magazin_left_position - 18);
+			
+	 }else{
+		 magazin_right_move(magazin_right_position + 18);
+		 if(turns%4 > 1) gripper_move(magazin_right_1);
+		 else gripper_move(magazin_right_2);
+		 gripper_close();
+		magazin_right_move(magazin_right_position - 18);
+	 }
+	 
+	 
+	 
+	 //gripper goes to placement
+	 switch(robo_move){
+		 case 0:
+			gripper_move(board_0);
+			gripper_position = board_0;
+			break;
+		
+		case 1:
+			gripper_move(board_1);
+			gripper_position = board_1;
+			break;
+		
+		case 2:
+			gripper_move(board_2);
+			gripper_position = board_2;
+			break;
+		
+		case 3:
+			gripper_move(board_3);
+			gripper_position = board_3;
+			break;
+			
+		case 4:
+			gripper_move(board_4);
+			gripper_position = board_4;
+			break;
+			
+		case 5:
+			gripper_move(board_5);
+			gripper_position = board_5;
+			break;
+			
+		case 6:
+			gripper_move(board_6);
+			gripper_position = board_6;
+			break;
+		}
+	gripper_open();
+	gripper_move(0);
+	
+	if(red) magazin_left_move(magazin_left_position + 18);
+	else magazin_right_move(magazin_right_position +18);	
+ }
+ 
+ 
+ 
 void playGame() {
 	printBoard(board); // print initial board
 	while (!gameOver) { // while no game over state
 		if (currentPlayer == COMPUTER) { // AI move
 			lcd_write("please wait", "AI is thinking");
 			int robo_move = aiMove();
+			robo_goes_brr(robo_move);
 			cout<<robo_move<<endl;
 			makeMove(board, robo_move, COMPUTER);
 			delay(1000);
 		}
 		else if (currentPlayer == PLAYER) { // player move
 			lcd_write("your move", "");
+			if(red)	magazin_right_move(magazin_right_position +18);
+			else magazin_left_move(magazin_left_position +18);
+			
 			makeMove(board, userMove(), PLAYER);
 		}
 		else if (turns == NUM_ROW * NUM_COL) { // if max number of turns reached
@@ -80,6 +179,29 @@ void playGame() {
 	}
 	gameOver = false;
 	turns = 0;
+}
+
+void sort_board(){
+	home_magazin_left();
+	home_magazin_right();
+	
+	for(int i = 0; i<6; i++){
+		for(int j 0 =; j<7; j++){
+			switch(board[i][j]){
+					gripper_open();
+					gripper_move(board_position_array[j]);
+					gripper_close();
+				
+				case 1: //players piece
+				if(!red){
+					
+					
+				
+			if(board[i][j] == 0) continue;
+			if(board[i][j] == 
+				 
+	
+	
 }
 
 void error_message(string error_m){
@@ -164,61 +286,102 @@ void move_motor(int motor_pin, int steps, bool direction){
 	}
 }
 
-bool setup_motors(){
-	
-	//motor left
-	/*mux entrance 11 = endschalter left
-	 * mux entrance 12 = endschalter right
-	 * mux entrance 13 = endschalter middle
-	 * mux entrance 14 = endschalter gripper
-	 * implement error when taking too long
-	 */
 
+void home_gripper(){
 	digitalWrite(motor_direction, LOW);
-	
-	if(set_mux_entrance(11)){
-		while(!digitalRead(mux_input_signal)){
-			move_motor(motor_lift_left, 5, 0);
-		}
-	}else{
-		error_message("could not set_mux_entrance");
-		return false;
+	set_mux_entrance(14);
+	delay(20);
+	while(!read_mux()){
+		move_motor(motor_gripper, 5, 0);
 	}
-	if(set_mux_entrance(12)){
-		while(!digitalRead(mux_input_signal)){
-			move_motor(motor_lift_right, 5, 0);
-		}
-	}else{
-		error_message("could not set_mux_entrance");
-		return false;
-	}
-	if(set_mux_entrance(13)){
-		while(!digitalRead(mux_input_signal)){
-			move_motor(motor_lift_middle, 5, 0);
-		}
-	}else{
-		error_message("could not set_mux_entrance");
-		return false;
-	}
-	if(set_mux_entrance(14)){
-		while(!digitalRead(mux_input_signal)){
-			move_motor(motor_gripper, 5, 0);
-		}
-	}else{
-		error_message("could not set_mux_entrance");
-		return false;
-	}
-	
 	gripper_position = 0;
+}
+
+void home_magazin_left(){
+	digitalWrite(motor_direction, LOW);
+	set_mux_entrance(11);
+	delay(20);
+	while(!read_mux()){
+		move_motor(motor_lift_left, 5, 0);
+	}
+	magazin_left_position = 0;
+}
+
+void home_magazin_right(){
+	digitalWrite(motor_direction, LOW);
+	set_mux_entrance(12);
+	delay(20);
+	while(!read_mux()){
+		move_motor(motor_lift_right, 5, 0);
+	}
+	magazin_right_position = 0;
+}
+
+void home_board(){
+	digitalWrite(motor_direction, LOW);
+	set_mux_entrance(13);
+	delay(20);
+	while(!read_mux()){
+		move_motor(motor_lift_middle, 5, 0);
+	}
+	board_lift_position = 0;
+}
+
+bool setup_motors(){
+	home_magazin_left();
+	home_gripper();
+	home_magazin_right();
+	home_board();
 	return true;
-
-}
-
-void raise_lift(bool left_lift){ //0 or 1 as arguments : 0 = left, 1 = right
-	
 }
 
 
+void magazin_left_move(float to_position){
+	bool dir;
+	float difference;
+	if(to_position > magazin_left_position){
+		 dir = true;
+		 difference = to_position - magazin_left_position;
+	}
+	else{
+		dir = false;
+		difference = magazin_left_position - to_position;
+	}
+	float steps = difference *spindle_pitch / steps_per_rotation;	
+	move_motor(motor_lift_left, (int)steps, dir);
+	magazin_left_position = to_position;
+}
+void magazin_right_move(float to_position){
+	bool dir;
+	float difference;
+	if(to_position > magazin_right_position){
+		 dir = true;
+		 difference = to_position - magazin_right_position;
+	}
+	else{
+		dir = false;
+		difference = magazin_right_position - to_position;
+	}
+	float steps = difference *spindle_pitch / steps_per_rotation;	
+	move_motor(motor_lift_right, (int)steps, dir);
+	magazin_right_position = to_position;
+}
+
+void board_move(float to_position){
+	bool dir;
+	float difference;
+	if(to_position > board_lift_position){
+		 dir = true;
+		 difference = to_position - board_lift_position;
+	}
+	else{
+		dir = false;
+		difference = board_lift_position - to_position;
+	}
+	float steps = difference *spindle_pitch / steps_per_rotation;	
+	move_motor(motor_lift_middle, (int)steps, dir);
+	board_lift_position = to_position;
+}
 
 void gripper_move(float to_position){
 	bool dir;
@@ -233,15 +396,18 @@ void gripper_move(float to_position){
 	}
 	float steps = difference / (pi*gear_diameter) * steps_per_rotation;	
 	move_motor(motor_gripper, (int)steps, dir);
+	gripper_position = to_position;
 
 }
 
 void gripper_open(){
-	
+	softPwmWrite(servo_gripper, 10);
+	delay(2000);
 }
 
 void gripper_close(){
-	
+	softPwmWrite(servo_gripper, 13);
+	delay(2000);
 }
 
 
@@ -257,16 +423,19 @@ int get_IR_Position(){
 	}
 }
 
-
+bool get_mux_signal(int mux_signal){
+	set_mux_entrance(mux_signal);
+	delay(20);
+	return read_mux();
+}
 
 
 int main(int argc, char** argv) {
+	
 	wiringPiSetupGpio();
 	
 	softPwmCreate(servo_gripper, 10, 200);
 	
-	softPwmWrite(servo_gripper, 10);
-
 	pinMode(motor_direction, OUTPUT);
 	pinMode(motor_lift_left, OUTPUT);
 	pinMode(motor_lift_right, OUTPUT);
@@ -274,27 +443,32 @@ int main(int argc, char** argv) {
 	pinMode(motor_gripper, OUTPUT);
 	
 	pinMode(mux_input_signal, INPUT);
+	pullUpDnControl(mux_input_signal, PUD_DOWN);
 	pinMode(mux_S0, OUTPUT);
 	pinMode(mux_S1, OUTPUT);
 	pinMode(mux_S2, OUTPUT);
 	pinMode(mux_S3, OUTPUT);
 	
-	move_motor(motor_lift_left, 400, 1);
-	move_motor(motor_lift_right, 400, 0);
-	move_motor(motor_lift_middle, 400, 1);
-	move_motor(motor_gripper, 400, 0);
-	//setup():
-	/*while(true){
+	//setup_motors();
+	setup_lcd();
+	
+	
+	
+	
+	while(true){
 		menu();
 		//json_write();
 		lcd_write("Game starts!", "");
 		
 		if(hard) MAX_DEPTH = 5;
 		else MAX_DEPTH = 2;
+		cout<<robot_begins<<endl;
+		if(robot_begins) currentPlayer = COMPUTER;
+		else currentPlayer = PLAYER;
 		
 		initBoard(); // initial setup
 		playGame(); // begin the game
-	}*/
+	}
 	
 	return 0;
 }
